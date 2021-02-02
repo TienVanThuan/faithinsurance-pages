@@ -1,0 +1,28 @@
+/* =========================================================
+pagination - ページネーションのモジュール
+========================================================= */
+
+.wp-pagenavi {
+    margin-top: 50px;
+    text-align: center;
+    @include mq(md) {
+        margin-top: 100px;
+    }
+    > span,
+    > a {
+        font-family: $font-family-original01;
+        letter-spacing: 0.4em;
+        color: #8e8e8e;
+        margin: 0 10px;
+        &.current {
+            color: $primary-color;
+        }
+    }
+    > a {
+        @include hover;
+        &:hover {
+            color: $primary-color;
+            opacity: 1;
+        }
+    }
+}

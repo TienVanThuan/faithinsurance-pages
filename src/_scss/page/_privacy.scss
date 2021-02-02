@@ -1,0 +1,54 @@
+/* =========================================================
+priacy policy - プライバシーポリシーページ固有のオブジェクト
+========================================================= */
+
+.p-privacy {
+    font-size: 0.875em;
+    font-weight: 400;
+    padding-top: 97px;
+    margin-bottom: -100px;
+
+    @include mq(md, max) {
+        margin-bottom: -50px;
+    }
+
+    p {
+        line-height: 2.2;
+        letter-spacing: 0.2em;
+        margin-bottom: 30px;
+
+        &:nth-child(5) {
+            margin-bottom: 59px;
+        }
+
+        &:nth-child(12) {
+            margin-bottom: 32px;
+        }
+
+        &:nth-child(13) {
+            letter-spacing: 0.38em;
+        }
+
+        &:nth-child(14) {
+            margin-bottom: 60px;
+        }
+
+        &:nth-child(15) {
+            letter-spacing: 0.4em;
+        }
+    }
+
+    &-text {
+        &-bold {
+            font-weight: 700;
+        }
+
+        &-ml-7 {
+            margin-left: -7px;
+        }
+
+        &-ml-4 {
+            margin-left: -4px;
+        }
+    }
+}

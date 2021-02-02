@@ -1,0 +1,829 @@
+/* =========================================================
+team - 従業員並び役員のプロフィールページ固有のオブジェクト
+========================================================= */
+
+.p-team {
+    padding: 110px 0px 0px;
+    text-align: center;
+
+    &-link {
+        @include flexbox;
+        @include flex-dir(column);
+        @include flex-just(flex-end);
+        transition: opacity .3s;
+
+        &:hover {
+            @include mq(lg, min) {
+                opacity: .7;
+            }
+        }
+
+        &+.p-team-link {
+            margin-top: 50px;
+        }
+
+        &:nth-child(2) {
+            @include mq(sm, min) {
+                margin-top: 0;
+            }
+        }
+
+        &:nth-child(3) {
+            @include mq(lg, min) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &-image {
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 21px;
+
+        img {
+            display: inline-block;
+            margin-right: -15%;
+        }
+    }
+
+    &-name {
+        color: $primary-color;
+        font-weight: 600;
+        font-size: 1.125em;
+        letter-spacing: 0.15em;
+        margin-bottom: 9px;
+
+        @include mq(lg, max) {
+            font-size: 1.05em;
+            margin-top: 10px;
+        }
+    }
+
+    &-position {
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        margin-left: -6px;
+
+        @include mq(md, max) {
+            font-size: 0.875em;
+        }
+    }
+}
+
+//============================END PAGE TEAM ============================
+
+.p-info {
+    .l-row {
+        align-items: center;
+    }
+
+    &-text {
+        margin-top: -116px;
+        padding-left: 118px;
+
+        @include mq(xs, max) {
+            margin-top: 20px;
+        }
+
+        @include mq(md, max) {
+            padding: 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: $primary-light-color;
+            font-size: 1.875em;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            margin-bottom: 21px;
+
+            @include mq(xs, max) {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            letter-spacing: 0.18em;
+        }
+    }
+
+    &-image {
+        padding: 36px 0px 0px 108px;
+
+        @include mq(md, max) {
+            padding-left: 0;
+            text-align: center;
+
+            img {
+                display: inline-block;
+                margin-right: -14%;
+            }
+        }
+
+        @include mq(md, max) {
+            order: -1;
+            // display: flex;
+            padding-top: 60px;
+        }
+
+
+        @include mq(xs, max) {
+            padding-left: 0px;
+            padding-top: 30px;
+        }
+    }
+
+
+    &-hagiwara {
+        .p-info {
+            &-image {
+                padding: 4px 58px;
+
+                @include mq(md, max) {
+                    padding: 0;
+                    padding-top: 50px;
+                    // justify-content: center;
+                }
+            }
+
+            &-text {
+                margin-top: -120px;
+
+                @include mq(md, max) {
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+
+    &-ihara {
+        .p-info {
+            &-image {
+                padding-top: 2px;
+                padding-left: 120px;
+
+                @include mq(md, max) {
+                    padding-top: 50px;
+                    padding-left: 0;
+                    // justify-content: center;
+                }
+            }
+
+            &-text {
+                margin-top: -117px;
+
+                @include mq(md, max) {
+                    margin-top: 50px;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    &-matsuda {
+        .p-info {
+            &-text {
+                margin-top: -93px;
+
+                @include mq(md, max) {
+                    margin-top: 50px;
+                }
+            }
+
+            &-image {
+                padding-top: 16px;
+                padding-left: 112px;
+
+                @include mq(md, max) {
+                    padding-top: 50px;
+                    padding-left: 0;
+                    // justify-content: center;
+                }
+            }
+        }
+    }
+
+    &-uehara {
+        .p-info {
+            &-text {
+                margin-top: -117px;
+
+                @include mq(md, max) {
+                    margin-top: 50px;
+                }
+            }
+
+            &-image {
+                padding-top: 10px;
+                padding-left: 109px;
+
+                @include mq(md, max) {
+                    padding-top: 50px;
+                    padding-left: 0;
+                    // justify-content: center;
+                }
+            }
+        }
+    }
+
+    &-yoshizawa {
+        .p-info {
+            &-text {
+                padding-left: 119px;
+
+                @include mq(md, max) {
+                    padding: 0;
+                }
+            }
+
+            &-image {
+                margin-top: -3px;
+                padding-top: 0;
+                padding-left: 131px;
+
+                @include mq(md, max) {
+                    margin-top: 0;
+                    padding-top: 50px;
+                    padding-left: 0;
+                    // justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+.p-profile {
+    margin-bottom: -240px;
+
+    @include mq(md, max) {
+        margin-bottom: 0px;
+    }
+
+    &-image {
+        padding-top: 60px;
+        padding-left: 241px;
+
+        img {
+            z-index: -1;
+        }
+
+        @include mq(xl, max) {
+            padding-left: 160px;
+        }
+
+        @include mq(lg, max) {
+            padding-left: 140px;
+            padding-top: 150px;
+        }
+
+        @include mq(md, max) {
+            display: flex;
+            order: 2;
+            padding-top: 100px;
+            padding-left: 70px;
+            justify-content: center;
+        }
+
+        @include mq(md, max) {
+            padding-left: 80px;
+        }
+    }
+
+    &-text {
+        background: $primary-color;
+        color: #FFF;
+        padding: 94px 67px 75px 70px;
+        position: relative;
+        top: -60px;
+
+        @include mq(md, max) {
+            top: 40px;
+        }
+
+        @include mq(sm, max) {
+            padding: 50px;
+        }
+
+        @include mq(xs, max) {
+            padding: 30px;
+        }
+
+        .c-text {
+
+            &-profile,
+            &-history,
+            &-strength {
+                h5 {
+                    color: #80a3ff;
+                    font-weight: 600;
+                    font-size: 1.125em;
+                    letter-spacing: 0.15em;
+                    margin-bottom: 12px;
+
+                    @include mq(xs, max) {
+                        font-size: 1em;
+                        margin-bottom: 6px;
+                    }
+                }
+
+                p {
+                    line-height: 2.2;
+                    letter-spacing: 0.2em;
+                    opacity: 0.9;
+
+                    @include mq(xs, max) {
+                        font-size: 0.875em;
+                    }
+
+                    span {
+                        display: block;
+                    }
+                }
+            }
+
+            &-profile {
+                margin-bottom: 44px;
+
+                @include mq(xs, max) {
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    margin-left: -2px;
+                }
+            }
+
+            &-history {
+                margin-bottom: 70px;
+
+                @include mq(xs, max) {
+                    margin-bottom: 45px;
+                }
+
+                h5 {
+                    margin-bottom: 18px;
+                }
+
+                p {
+                    line-height: 1.6;
+                    margin-bottom: 27px;
+
+                    &:nth-child(2) {
+                        margin-bottom: 26px;
+                    }
+                }
+            }
+
+            &-strength {
+                margin-bottom: 97px;
+
+                @include mq(xs, max) {
+                    margin-bottom: 50px;
+                }
+
+                &-subtitle {
+                    font-weight: 700;
+                    font-size: 1.375em;
+                    margin-left: -4px;
+                    letter-spacing: 0.25em;
+                    line-height: 2.2;
+                    margin-bottom: 28px;
+                }
+
+                h5 {
+                    margin-bottom: 0;
+                }
+
+                p {
+                    line-height: 1.6;
+                }
+            }
+
+            &-btn {
+                .btn {
+                    display: block;
+                    border-color: #f2f2f2;
+                    color: #f2f2f2;
+                    max-width: 100%;
+                    padding-bottom: 17px;
+                    padding-top: 19px;
+                    padding-left: 49px;
+                    letter-spacing: 0.15em;
+
+                    &:hover {
+                        background: #FFF;
+
+                        span {
+                            color: #0006ff;
+
+                            &::after {
+                                background: #0006ff;
+                            }
+                        }
+                    }
+
+                    span::after {
+                        margin-left: 21px;
+                        background: #f2f2f2;
+
+
+                    }
+                }
+            }
+
+        }
+    }
+
+    &-hagiwara {
+        .p-profile {
+            &-image {
+                padding-top: 73px;
+                padding-left: 191px;
+
+                @include mq(xl, max) {
+                    padding-left: 160px;
+                }
+
+                @include mq(lg, max) {
+                    padding-left: 140px;
+                }
+
+                @include mq(md, max) {
+                    padding-left: 80px;
+                }
+            }
+
+            &-text {
+                top: -63px;
+
+                @include mq(md, max) {
+                    top: 40px;
+                }
+
+                .c-text {
+
+                    &-profile,
+                    &-history,
+                    &-strength {
+                        h5 {
+                            margin-bottom: 13px;
+                        }
+                    }
+
+                    &-history {
+                        margin-bottom: 67px;
+
+                        p {
+                            span {
+                                display: unset;
+                            }
+
+                            &:nth-child(2) {
+                                margin-bottom: 42px;
+
+                                span:last-child {
+                                    padding-left: 14px;
+                                    line-height: 2.2;
+                                    letter-spacing: 0.22em;
+
+                                    @include mq(lg, max) {
+                                        padding-left: 5px;
+                                    }
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                margin-bottom: 41px;
+
+                                span:last-child {
+                                    padding-left: 13px;
+                                    letter-spacing: 0.22em;
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                letter-spacing: 0.26em;
+                                line-height: 2.2;
+                                margin-bottom: 42px;
+                            }
+                        }
+
+                    }
+
+                    &-strength {
+                        margin-bottom: 90px;
+
+                        h5 {
+                            margin-bottom: 0px;
+                        }
+
+                        &-subtitle {
+                            letter-spacing: 0.2em;
+                            margin-left: -1px;
+                            margin-bottom: 22px;
+                        }
+
+                        p {
+                            line-height: 2.2;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    &-ihara {
+        .p-profile {
+            &-image {
+                padding-top: 73px;
+                padding-left: 224px;
+
+                @include mq(xl, max) {
+                    padding-left: 160px;
+                }
+
+                @include mq(lg, max) {
+                    padding-left: 140px;
+                }
+
+                @include mq(md, max) {
+                    padding-left: 80px;
+                }
+            }
+
+            &-text {
+
+                .c-text {
+                    &-profile {
+                        h5 {
+                            margin-bottom: 14px;
+                        }
+                    }
+
+                    &-history {
+                        margin-bottom: 97px;
+
+                        @include mq(md, max) {
+                            margin-bottom: 70px;
+                        }
+
+                        @include mq(sm, max) {
+                            margin-bottom: 50px;
+                        }
+
+                        h5 {
+                            margin-bottom: 13px;
+                        }
+
+                        p {
+                            line-height: 2.2;
+
+                            &:nth-child(2) {
+                                margin-bottom: 38px;
+                            }
+
+                            &:nth-child(3) {
+                                margin-bottom: 36px;
+                            }
+                        }
+                    }
+
+                    &-strength {
+                        margin-bottom: 90px;
+
+                        @include mq(md, max) {
+                            margin-bottom: 70px;
+                        }
+
+                        @include mq(sm, max) {
+                            margin-bottom: 50px;
+                        }
+
+                        &-subtitle {
+                            letter-spacing: 0.2em;
+                            margin-left: -2px;
+                            margin-bottom: 22px;
+                        }
+
+                        p {
+                            line-height: 2.2;
+                            letter-spacing: 0.2em;
+
+                            span:nth-child(3) {
+                                letter-spacing: 0.165em;
+                            }
+
+                            span {
+                                @include mq(xl, max) {
+                                    display: unset;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    &-matsuda {
+        margin-bottom: -215px;
+
+        @include mq(md, max) {
+            margin-bottom: 0px;
+        }
+
+        .p-profile {
+            &-image {
+                padding-top: 76px;
+                padding-left: 226px;
+
+                @include mq(xl, max) {
+                    padding-left: 160px;
+                }
+
+                @include mq(lg, max) {
+                    padding-left: 140px;
+                }
+
+                @include mq(md, max) {
+                    padding-left: 80px;
+                    padding-top: 80px;
+                }
+            }
+
+            &-text {
+                padding-top: 96px;
+                padding-bottom: 95px;
+                top: -35px;
+
+                @include mq(md, max) {
+                    top: 40px;
+                }
+
+                @include mq(sm, max) {
+                    padding: 50px;
+                }
+
+                .c-text {
+                    &-history {
+                        margin-bottom: 50px;
+
+                        p {
+                            letter-spacing: 0.21em;
+                        }
+                    }
+
+                    &-strength {
+                        margin-bottom: 95px;
+
+                        @include mq(md, max) {
+                            margin-bottom: 70px;
+                        }
+
+                        @include mq(sm, max) {
+                            margin-bottom: 50px;
+                        }
+
+                        h5 {
+                            margin-bottom: 9px;
+                        }
+
+                        &-subtitle {
+                            line-height: 1.5;
+                            letter-spacing: 0.2em;
+
+                            span {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-uehara {
+        .p-profile {
+            &-image {
+                padding-top: 32px;
+                padding-left: 224px;
+
+                @include mq(xl, max) {
+                    padding-left: 160px;
+                }
+
+                @include mq(lg, max) {
+                    padding-left: 140px;
+                }
+
+                @include mq(md, max) {
+                    padding-left: 80px;
+                    padding-top: 80px;
+                }
+            }
+
+            &-text {
+                padding: 96px 67px 75px 70px;
+
+                @include mq(sm, max) {
+                    padding: 50px;
+                }
+
+                .c-text {
+                    &-history {
+                        margin-bottom: 48px;
+                    }
+
+                    &-strength {
+                        margin-bottom: 95px;
+
+                        @include mq(md, max) {
+                            margin-bottom: 70px;
+                        }
+
+                        @include mq(sm, max) {
+                            margin-bottom: 50px;
+                        }
+
+                        &-subtitle {
+                            letter-spacing: 0.21em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-yoshizawa {
+        .p-profile {
+            &-image {
+                padding-top: 85px;
+                padding-left: 223px;
+
+                @include mq(xl, max) {
+                    padding-left: 160px;
+
+                }
+
+                @include mq(lg, max) {
+                    padding-left: 140px;
+                }
+
+                @include mq(md, max) {
+                    padding-left: 80px;
+                    padding-top: 80px;
+                }
+            }
+
+            &-text {
+                padding-top: 96px;
+
+                @include mq(sm, max) {
+                    padding: 50px;
+                }
+
+                .c-text {
+                    &-history {
+                        margin-bottom: 46px;
+
+                        h5 {
+                            margin-bottom: 13px;
+                        }
+
+                        p {
+                            line-height: 2.25;
+                        }
+                    }
+
+                    &-strength {
+                        margin-bottom: 90px;
+
+                        @include mq(md, max) {
+                            margin-bottom: 70px;
+                        }
+
+                        @include mq(sm, max) {
+                            margin-bottom: 50px;
+                        }
+
+                        &-subtitle {
+                            letter-spacing: 0.21em;
+                            margin-bottom: 23px;
+                        }
+
+                        p {
+                            line-height: 2.2;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

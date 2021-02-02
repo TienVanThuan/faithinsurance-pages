@@ -1,0 +1,45 @@
+/* =========================================================
+btn - ボタンのモジュール
+========================================================= */
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #000;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 0.75em;
+    @include hover;
+    max-width: 320px;
+    width: 100%;
+    padding: 15px 0;
+    @include mq(sm) {
+        font-size: 0.875em;
+    }
+    @include mq(md) {
+        padding: 20px 0;
+        max-width: 380px;
+    }
+    span {
+        display: inline-flex;
+        align-items: center;
+        &::after {
+            content: "";
+            display: block;
+            width: 44px;
+            height: 1px;
+            background: #000;
+            margin-left: 12px;
+        }
+    }
+    &:hover {
+        background: #000;
+        opacity: 1;
+        span {
+            color: #FFF;
+            &::after {
+                background: #FFF;
+            }
+        }
+    }
+}

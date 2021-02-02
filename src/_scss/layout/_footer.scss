@@ -1,0 +1,93 @@
+/* =========================================================
+footer - フッターのレイアウト
+========================================================= */
+
+.l-footer {
+  margin-top: 80px;
+  background: #f2f2f2;
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) {
+    margin-top: 80px !important;
+  }
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) {
+    @media screen and (min-width: 770px) and (max-width: 1356px) {
+      margin-top: 0px !important;
+    }
+    @media screen and (min-width: 567px) and (max-width: 728px) {
+      margin-top: 0px !important;
+    }
+  }
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) and (min-width: 769px) {
+    margin-top: 180px !important;
+  }
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) and (max-width: 566px) {
+    margin-top: 0px !important;
+  }
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) and (max-width: 482px) {
+    margin-top: 80px !important;
+  }
+  @include mq(md) {
+    margin-top: 180px;
+  }
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) and (max-width: 482px) {
+    @media screen and (max-width: 382px) {
+      margin-top: 0px;
+    }
+  }
+}
+.logo-footer {
+  width: 105px;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+  @include mq(md) {
+    padding-bottom: 30px;
+  }
+  &-logo {
+    width: 105px;
+    margin-right: 8.3%;
+    a {
+      display: block;
+      @include hover;
+    }
+  }
+  &-privacy {
+    font-size: 0.75em;
+    @include mq(md) {
+      font-size: 0.875em;
+    }
+    a {
+      color: $primary-color;
+      font-weight: 500;
+      @include hover;
+    }
+  }
+  .pagetop-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    @include mq(md) {
+      width: 47px;
+      @include hover;
+    }
+  }
+  &-copyright {
+    color: $primary-color;
+    margin-left: auto;
+    font-size: 0.75em;
+    @include mq(md) {
+      font-size: 0.875em;
+    }
+  }
+}

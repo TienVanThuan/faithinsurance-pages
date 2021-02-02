@@ -1,0 +1,76 @@
+/* =========================================================
+container - コンテンツの大枠
+========================================================= */
+
+// ---------------------------------------------------------------
+//  ■コンテンツの大枠
+//  グリッドシステムを使う際は必須です。
+// ---------------------------------------------------------------
+.l-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+
+    // spサイズ
+    @include mq(sm, min) {
+        max-width: 606px;
+    }
+
+    //tbサイズ以上
+    @include mq(md, min) {
+        max-width: 798px;
+    }
+
+    // // pcサイズ以上
+    @include mq(lg, min) {
+        max-width: 1022px;
+    }
+
+    // 大きめのpcサイズ以上
+    @include mq(xl, min) {
+        max-width: 1230px;
+    }
+
+    // 横幅いっぱい
+    &--fluid {
+        max-width: 100% !important;
+    }
+
+    &--wide {
+        width: 100%;
+        max-width: 1366px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    &--sub {
+        width: 100%;
+        max-width: 821px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 15px;
+
+        @include mq(md, max) {
+            max-width: 600px;
+        }
+
+        @include mq(sm, max) {
+            max-width: 400px;
+
+        }
+    }
+
+    &--privacy {
+        max-width: 850px;
+        padding-left: 131px;
+        padding-right: 30px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(md, max) {
+            padding-left: 30px;
+        }
+    }
+}

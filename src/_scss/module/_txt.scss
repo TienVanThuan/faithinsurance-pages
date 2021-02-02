@@ -1,0 +1,43 @@
+/* =========================================================
+txt - テキストのモジュール
+========================================================= */
+
+.txt {
+    @include font-size(14);
+
+    @include mq(lg, min) {
+        @include font-size(16);
+    }
+
+    &--xs {
+        @include mq(lg, min) {}
+    }
+
+    &--sm {
+        @include mq(lg, min) {}
+    }
+
+    &--md {
+        @include mq(lg, min) {}
+    }
+
+    &--lg {
+        @include mq(lg, min) {}
+    }
+
+    &--xl {
+        @include mq(lg, min) {}
+    }
+
+    &--xxl {
+        @include mq(lg, min) {}
+    }
+
+    &--serif {
+        // font-family: $font-family-jp-serif;
+    }
+
+    &--en {
+        font-family: $font-family-original01;
+    }
+}

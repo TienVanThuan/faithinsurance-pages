@@ -1,0 +1,249 @@
+/* =========================================================
+header - ヘッダーのレイアウト
+========================================================= */
+
+.l-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #FFF;
+    transition: .3s;
+    &.is-scrolled {
+        box-shadow: 0 0 3px rgba(#000, 0.3);
+    }
+    > .l-container {
+        @media screen and (min-width: 577px) and (max-width: 1366px) {
+            max-width: none;
+        }
+    }
+
+    .home & {
+        &:not(.is-scrolled) {
+            background: transparent;
+        }
+    }
+}
+
+.gnav {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    transition: .2s;
+    @include mq(sm) {
+        height: 80px;
+    }
+    @include mq(lg) {
+        height: 133px;
+    }
+    .is-scrolled & {
+        height: 80px;
+    }
+    &-logo {
+        width: 86px;
+        margin-right: auto;
+    }
+    &-links {
+        font-size: 0.75rem;
+        > ul {
+            display: flex;
+            > li {
+                margin-right: 35px;
+                a {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: -1%;
+                        width: 102%;
+                        height: 2px;
+                        margin-top: 2px;
+                        transform: scale(0, 1);
+                        transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+                        transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1),
+                        -webkit-transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+                        background: $primary-color;
+                        transform-origin: right top;
+                    }
+                    &:hover,
+                    &.is-active {
+                        &::before {
+                            transform: scale(1, 1);
+                            transform-origin: left top;
+                        }
+                    }
+                    .home .l-header:not(.is-scrolled) & {
+                        color: #FFF;
+                        &::before {
+                            background: #FFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-contact {
+        font-size: 0.75rem;
+        &-btn {
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            padding: 10px 52px;
+            @include hover;
+            &:hover {
+                background: $primary-color;
+                color: #FFF;
+                opacity: 1;
+            }
+            .home .l-header:not(.is-scrolled) & {
+                color: #FFF;
+                border-color: #FFF;
+                &:hover {
+                    background: #FFF;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+#spnav-toggle {
+    z-index: 300;
+    .inner {
+        width: 46px;
+        height: 46px;
+        position: relative;
+        background-color: $primary-color;
+        transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+        transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+        span {
+            display: block;
+            width: 90%;
+            height: 3px;
+            background-color: #fff;
+            position: absolute;
+            left: 5px;
+            border-radius: 5px;
+            transition: .4s;
+            &:nth-child(1) {
+                width: 76%;
+                top: 11px;
+            }
+            &:nth-child(2) {
+                width: 76%;
+                top: 20px;
+            }
+            &:nth-child(3) {
+                width: 32%;
+                top: 30px;
+            }
+        }
+        @include mq(sm) {
+            .home .l-header:not(.is-scrolled) & {
+                background-color: #FFF;
+                span {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+    &.active {
+        .inner {
+            span {
+                &:nth-child(1) {
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    top: 22px;
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    width: 76%;
+                    top: 22px;
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.spnav {
+    background: rgba(#efefef, 0.85);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 400;
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    &-links {
+        background: rgba(#efefef, 1);
+        > li {
+            position: relative;
+            > a {
+                display: block;
+                border-bottom: 1px solid #aaa;
+                padding: 13px 0 0 20px;
+                height: 52px;
+                width: 100%;
+                position: relative;
+            }
+            &.has-child {
+                .spnav-subtrg {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 51px;
+                    background: #d9d9d9;
+                    &::before {
+                        content: "";
+                        background: #777;
+                        width: 20px;
+                        height: 1px;
+                        position: absolute;
+                        top: 22px;
+                        right: 15px;
+                    }
+                    &::after {
+                        content: "";
+                        background: #777;
+                        width: 20px;
+                        height: 1px;
+                        position: absolute;
+                        top: 22px;
+                        right: 15px;
+                        transform: rotate(90deg);
+                        transition: .3s;
+                    }
+                    &.is-active {
+                        &::after {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+        }
+        &-sub {
+            display: none;
+            >li {
+                position: relative;
+                >a {
+                    display: block;
+                    background: #FFF;
+                    border-bottom: 1px solid #aaa;
+                    padding: 13px 0 0 20px;
+                    height: 50px;
+                    width: 100%;
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+

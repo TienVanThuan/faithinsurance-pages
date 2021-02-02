@@ -1,0 +1,44 @@
+/* =========================================================
+ttl - タイトルのモジュール
+========================================================= */
+
+.ttl {
+    @include font-size(18);
+
+    @include mq(lg, min) {
+        @include font-size(20);
+    }
+
+    &--xs {
+
+        @include mq(lg, min) {}
+    }
+
+    &--sm {
+
+        @include mq(lg, min) {}
+    }
+
+    &--md {
+
+        @include mq(lg, min) {}
+    }
+
+    &--lg {
+        @include mq(lg, min) {}
+    }
+
+    &--xl {
+
+        @include mq(lg, min) {}
+    }
+
+    &--xxl {
+
+        @include mq(lg, min) {}
+    }
+
+    &--en {
+        font-family: $font-family-original01;
+    }
+}

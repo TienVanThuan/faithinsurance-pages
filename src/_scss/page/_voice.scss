@@ -1,0 +1,90 @@
+/* =========================================================
+voice - お客様の声ページ固有のオブジェクト
+========================================================= */
+
+.p-voice {
+  // @media screen and (min-width: 567px) and (max-width: 728px) {
+  //   margin-bottom: 80px;
+  // }
+  // @media screen and (max-width: 382px) {
+  //   margin-bottom: 80px;
+  // }
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) {
+    @media screen and (max-width: 1200px) {
+      margin-bottom: -450px;
+    }
+    @media screen and (max-width: 1000px) {
+      margin-bottom: -950px;
+    }
+    @media screen and (max-width: 768px) {
+      margin-bottom: -1050px;
+    }
+    @media screen and (max-width: 568px) {
+      margin-bottom: -1300px;
+    }
+  }
+  &-intro {
+    text-align: center;
+  }
+  &-list {
+    & + & {
+      margin-top: 60px;
+    }
+    &-img {
+      transition: transform 0.2s;
+      img {
+        transition: 0.2s ease;
+        box-shadow: 1px 11px 25px 0px #b2b2b2;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    &-date {
+      color: $primary-color;
+      font-weight: 600;
+      font-family: $font-family-original01;
+      font-size: 0.875em;
+    }
+    &-ttl {
+      color: $primary-color;
+      margin-top: 10px;
+      @include mq(sm, max) {
+        margin-top: 6px;
+      }
+    }
+    &-txt {
+      margin-top: 25px;
+      @include mq(sm, max) {
+        font-size: 0.875em;
+        margin-top: 16px;
+      }
+    }
+  }
+}
+.lightbox {
+  position: fixed !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.lb-data .lb-number {
+  display: none !important;
+}
+.lb-nav {
+  display: none !important;
+}
+
+.lb-data .lb-close {
+  margin-bottom: 5px;
+}
+
+.lb-dataContainer {
+  pointer-events: none;
+}

@@ -1,0 +1,28 @@
+/* =========================================================
+404 - 404ページ固有のオブジェクト
+========================================================= */
+
+.p-404 {
+    padding-top: 100px;
+    margin-bottom: -25px;
+
+    @include mq(md, max) {
+        padding-top: 50px;
+    }
+
+    .p-corp-btn .btn {
+        padding-left: 90px;
+
+        @include mq(md, max) {
+            padding-left: 50px;
+        }
+
+        span::after {
+            margin-left: 65px;
+
+            @include mq(md, max) {
+                margin-left: 20px;
+            }
+        }
+    }
+}

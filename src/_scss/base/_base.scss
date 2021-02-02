@@ -1,0 +1,38 @@
+/* =========================================================
+base - 基本設定
+========================================================= */
+
+html {
+  overflow-x: hidden;
+}
+html.is-show {
+  overflow: hidden;
+}
+html.lb-disable {
+  overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
+  height: 100vh;
+  // @media screen and (max-width: 468px) {
+  //   position: fixed;
+  // }
+}
+
+body {
+  overflow: hidden;
+  @include font-size(16);
+  line-height: $base-line-height;
+  color: $base-font-color;
+  font-family: $font-family-jp-sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+
+  // &:hover {
+  // 	color: inherit;
+  // }
+}

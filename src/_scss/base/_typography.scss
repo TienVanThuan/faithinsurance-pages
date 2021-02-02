@@ -1,0 +1,68 @@
+// =========================================================
+// typography - テキスト関連の設定
+// =========================================================
+
+//  ・フォントサイズ
+//  レガシーブラウザ用にpx指定した後、モダンブラウザ用にrem指定しています。
+// --------------------
+@mixin font-size($size, $base: 16) {
+    font-size: $size + px;
+    font-size: ($size / $base) + rem;
+}
+
+// vwで指定するバージョン
+@function get_vw($size, $viewport:800) {
+    $rate: 100 / $viewport;
+    @return $rate * $size * 1vw;
+}
+
+@mixin font-size-vw($font_size:10) {
+    font-size: $font_size * 1px;
+    font-size: get_vw($font_size);
+}
+
+// ・デフォルトの文字サイズ
+// --------------------
+$base-font-size: 16px;
+
+// ・行の高さ
+// --------------------
+$base-line-height: 1.6;
+
+// ・文字色
+// 見出しを#333333、本文を#555555、重要度の低い文字を#777777に指定すると見やすいです。
+// --------------------
+$base-font-color: #000;
+
+// ・aリンクの文字色
+// hoverなどで若干色が薄くなります。
+// --------------------
+@mixin link-color($color: $text-link-color) {
+    color: $color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: lighten($color, 20%);
+    }
+}
+
+// ・テキスト要素から上下の余白削除
+@mixin text-crop {
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+    }
+
+    &::before {
+        margin-bottom: calc((1 - #{$base-line-height}) * 0.5em);
+    }
+
+    &::after {
+        margin-top: calc((1 - #{$base-line-height}) * 0.5em);
+    }
+}

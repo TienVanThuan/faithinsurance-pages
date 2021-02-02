@@ -1,0 +1,26 @@
+/* =========================================================
+contact - お問い合わせページ固有のオブジェクト
+========================================================= */
+.require {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 100px;
+  .is-required {
+    font-size: 10px;
+    height: 18px;
+    margin-top: 3px;
+    margin-right: 10px;
+  }
+  p {
+    font-size: 16px;
+    float: left;
+  }
+}
+.m-form {
+  &-col {
+    color: #0006ff;
+  }
+  select {
+    color: #0006ff;
+  }
+}

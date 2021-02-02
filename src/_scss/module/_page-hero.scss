@@ -1,0 +1,53 @@
+/* =========================================================
+page-hero - 下層ページのメインタイトル部分
+========================================================= */
+
+.page-header {
+    margin: 0 auto;
+    position: relative;
+
+    &-image {
+        margin: 0 0 0 auto;
+        width: 80%;
+
+        @include mq(md) {
+            width: 73.7%;
+        }
+    }
+
+    &-text {
+        background: rgba($primary-color, 0.8);
+        color: #FFF;
+        min-width: 49.27%;
+        padding: 3.6% 3% 3% 6.6%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 2;
+
+        &-en {
+            font-family: $font-family-original01;
+            font-size: 0.75rem;
+            margin-bottom: 2%;
+        }
+
+        &-jp {
+            font-size: 1.625rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+
+            @include mq(md) {
+                font-size: 1.875rem;
+            }
+
+            @include mq(sm, max) {
+                font-size: 1em;
+            }
+
+            @include mq(xs, max) {
+                font-size: 0.875em;
+            }
+        }
+    }
+}

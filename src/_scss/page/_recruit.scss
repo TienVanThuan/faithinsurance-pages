@@ -1,0 +1,211 @@
+/* =========================================================
+recruit - 採用情報ページ固有のオブジェクト
+========================================================= */
+
+
+.p-message {
+    width: 73.5%;
+    margin-left: auto;
+    background: #FFF;
+    padding: 140px 0px 100px 80px;
+
+    @include mq(xxl1) {
+        padding: 143px 0px 102px 130px;
+    }
+
+    @include mq(xl, max) {
+        padding-right: 10px;
+        padding-left: 120px;
+    }
+
+    @include mq(lg, max) {
+        padding-right: 20px;
+        padding-top: 100px;
+        padding-left: 100px;
+    }
+
+    @include mq(md, max) {
+        width: 80%;
+        padding: 100px 30px 80px 50px;
+    }
+
+    @include mq(sm, max) {
+        width: 93%;
+        padding: 50px 20px;
+    }
+
+    &-title {
+        margin-bottom: 100px;
+
+        @include mq(md, max) {
+            margin-bottom: 70px;
+        }
+
+        @include mq(sm, max) {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: $primary-light-color;
+            font-weight: 600;
+            font-size: 1.5em;
+            letter-spacing: 0.16em;
+            margin-bottom: 11px;
+        }
+
+        p {
+            letter-spacing: 0.06em;
+        }
+    }
+
+    &-text {
+        margin-bottom: 86px;
+
+        @include mq(sm, max) {
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 0.875em;
+            line-height: 2.2;
+            letter-spacing: 0.29em;
+            margin-bottom: 30px;
+            padding-left: 2px;
+
+            @include mq(lg, max) {
+                padding-left: 0;
+            }
+
+            &:first-child {
+                letter-spacing: 0.4em;
+            }
+
+            &:nth-child(6) {
+                margin-bottom: 29px;
+
+                span:nth-child(1n) {
+                    margin-left: -5px;
+                }
+
+                span:nth-child(2n) {
+                    margin-left: 0px;
+                }
+
+                span:first-child {
+                    letter-spacing: 0.18em;
+                }
+            }
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    &-btn {
+        .l-row {
+            margin-left: 0px;
+        }
+
+        .btn {
+            &:hover svg {
+                .cls-1 {
+                    fill: #FFF;
+                }
+            }
+
+            padding-top: 18px;
+            padding-bottom: 5px;
+            font-size: 1.125em;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+
+
+            @include mq(xl, max) {
+                max-width: 300px;
+            }
+
+            @include mq(lg, max) {
+                max-width: 225px;
+            }
+
+            @include mq(md, max) {
+                display: block;
+                max-width: 100%;
+                flex: 100%;
+            }
+
+            @include mq(sm, max) {
+                padding-top: 16px;
+                padding-bottom: 10px;
+            }
+
+            &:first-child {
+                margin-right: 10px;
+
+                @include mq((xxl1)) {
+                    margin-right: 30px;
+                }
+
+                @include mq(md, max) {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+
+                svg {
+                    transform: translate(50%);
+                    margin-left: -23px;
+                }
+
+                span {
+                    transform: translate(18px, -3px);
+                }
+
+            }
+
+
+
+            &:last-child {
+                letter-spacing: 0.155em;
+                padding-top: 16px;
+                padding-bottom: 6px;
+
+                svg {
+                    margin-right: 4px;
+                    margin-left: 7px;
+
+                }
+
+                span {
+                    transform: translateY(-5px);
+                }
+            }
+
+            span::after {
+                display: none;
+            }
+        }
+    }
+
+    &-image {
+        margin-bottom: -515px;
+
+        @include mq(sm, max) {
+            margin-bottom: -300px;
+        }
+
+        img {
+            z-index: -1;
+            position: relative;
+            top: -407px;
+
+            @include mq(xxl, min) {
+                width: 37%;
+            }
+
+            @include mq(sm, max) {
+                top: -200px;
+            }
+        }
+    }
+}

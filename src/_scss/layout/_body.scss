@@ -1,0 +1,19 @@
+/* =========================================================
+body - ボディのレイアウト
+========================================================= */
+
+.l-body {
+    @include flexbox;
+    @include flex-dir(column);
+    min-height: 100vh;
+    position: relative;
+    padding-top: 80px;
+    @include mq(lg) {
+        padding-top: 133px;
+    }
+    &.home {
+        @include mq(sm) {
+            padding-top: 0;
+        }
+    }
+}

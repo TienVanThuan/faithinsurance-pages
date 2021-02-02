@@ -1,0 +1,494 @@
+/* =========================================================
+business - 事業内容ページ固有のオブジェクト
+========================================================= */
+
+.business-intro {
+    line-height: 2.4;
+    font-size: 0.875em;
+    margin: 50px 0 75px;
+
+    @include mq(md) {
+        margin: 90px 0;
+    }
+}
+
+.business-service {
+    &+& {
+        margin-top: 100px;
+
+        @include mq(md) {
+            margin-top: 200px;
+        }
+    }
+
+    &-intro {
+        @include mq(md) {
+            display: flex;
+        }
+
+        &-ttl {
+            color: $primary-color;
+            padding: 0;
+            text-align: center;
+
+            @include mq(md) {
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex: 0 0 380px;
+                padding: 0 0 0 40px;
+            }
+
+            @include mq(xl) {
+                flex: 0 0 494px;
+                padding: 0 0 0 10.4%;
+            }
+
+            &-jp {
+                font-size: 1.625em;
+                font-weight: 700;
+                letter-spacing: 0.3em;
+
+                @include mq(md) {
+                    font-size: 1.875em;
+                    margin-top: -145px;
+                }
+            }
+
+            &-en {
+                font-size: 0.875em;
+                font-weight: 500;
+                margin-top: 15px;
+            }
+        }
+
+        &-txt {
+            background: rgba($primary-color, 0.8);
+            color: #FFF;
+            font-size: 0.875em;
+            padding: 6.6%;
+            line-height: 2.4;
+            margin-top: 7%;
+
+            // flex: 0 0 63.8%;
+            @include mq(md) {
+                margin-top: 0;
+                padding-bottom: 210px;
+            }
+        }
+
+        &.ttl-right {
+            @include mq(md) {
+                flex-direction: row-reverse;
+
+                .business-service-intro-ttl {
+                    @include mq(xl) {
+                        padding-left: 7.3%;
+                    }
+                }
+
+                &-txt {}
+            }
+        }
+    }
+
+    &-lineup {
+        background: #f2f2f2;
+        position: relative;
+        z-index: 2;
+        padding: 40px 20px 40px;
+
+        @include mq(sm) {
+            padding-top: 10%;
+        }
+
+        @include mq(md) {
+            padding: 100px 0;
+            margin-top: -145px;
+        }
+
+        &-list {
+            max-width: 410px;
+            margin: 0 auto;
+
+            @include mq(md) {
+                display: flex;
+                align-items: center;
+                max-width: 100%;
+            }
+
+            &+& {
+                margin-top: 50px;
+
+                @include mq(md) {
+                    margin-top: 90px;
+                }
+            }
+
+            &-image {
+                margin: 0 auto;
+
+                @include mq(md) {
+                    flex: 0 0 34.17%;
+                }
+            }
+
+            &-txt {
+                @include mq(md) {
+                    flex-grow: 1;
+                    padding: 0 8.3%;
+                }
+
+                &-ttl {
+                    color: $primary-color;
+                    font-size: 1.125em;
+                    font-weight: 700;
+                    margin-top: 20px;
+
+                    @include mq(md) {
+                        margin-top: 0;
+                    }
+                }
+
+                &-exp {
+                    font-size: 0.875em;
+                    line-height: 2;
+                    margin-top: 12px;
+
+                    @include mq(md) {
+                        margin-top: 30px;
+                        line-height: 2.4;
+                    }
+                }
+            }
+
+            &.img-right {
+                @include mq(md) {
+                    flex-direction: row-reverse;
+
+                    &-image {}
+
+                    &-txt {}
+                }
+            }
+        }
+    }
+
+    &-case {
+        margin-top: 50px;
+
+        @include mq(md) {
+            margin-top: 90px;
+        }
+
+        &-ttl {
+            color: $primary-color;
+
+            &-en {
+                font-size: 0.875em;
+            }
+
+            &-jp {
+                font-size: 1.625em;
+                font-weight: 700;
+                letter-spacing: 0.3em;
+                margin-top: 5px;
+
+                @include mq(md) {
+                    font-size: 1.875em;
+                }
+            }
+        }
+
+        &-list {
+            &-block {
+                border: 1px solid $primary-color;
+                text-align: center;
+                padding: 42px 20px 40px;
+                height: 100%;
+            }
+
+            &-ttl {
+                color: $primary-color;
+                font-size: 0.875em;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 86px;
+                    height: 1px;
+                    background: $primary-color;
+                    margin: 8px auto 0;
+                }
+            }
+
+            &-txt {
+                font-size: 1.125em;
+                line-height: 2;
+                margin-top: 35px;
+                letter-spacing: 0.2em;
+            }
+
+            &-more {
+                display: inline-block;
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                margin-top: 35px;
+                font-size: 0.875em;
+                padding: 10px 39px;
+                @include hover;
+
+                i {
+                    margin-left: 0.3em;
+                }
+
+                &:hover {
+                    background: $primary-color;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}
+
+// ====================== end page business ======================
+.case-header {
+    padding-top: 88px;
+
+    @include mq(md, max) {
+        padding-top: 50px;
+    }
+
+
+    &-text {
+        margin-bottom: 50px;
+        text-align: center;
+        color: $primary-color;
+
+        @include mq(sm, max) {
+            margin-bottom: 25px;
+        }
+
+        &-en {
+            font-size: 0.875em;
+            font-family: $font-family-original01;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
+        }
+
+        &-jp {
+            font-size: 1.875em;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+
+            @include mq(sm, max) {
+                font-size: 1.6em;
+            }
+        }
+    }
+
+    &-profile {
+        background: rgba($primary-color, 0.8);
+        width: 73%;
+        margin: 0 auto;
+        padding: 73px 73px 45px 73px;
+        text-align: center;
+        color: #FFF;
+        transform: translateY(-20%);
+
+        @include mq(md, max) {
+            padding: 50px;
+        }
+
+        @include mq(sm, max) {
+            padding: 20px;
+            width: 80%;
+            transform: translateY(-7%);
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: 0.875em;
+            letter-spacing: 0.18em;
+            line-height: 2.4;
+            opacity: 0.7;
+
+            @include mq(sm, max) {
+                line-height: 2;
+            }
+
+            &-en {
+                font-size: 0.75em;
+                font-family: $font-family-original01;
+                letter-spacing: 0.15em;
+                margin-left: -4px;
+                margin-bottom: 18px;
+                font-weight: 500;
+                opacity: 0.9;
+
+                @include mq(sm, max) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            &-jp {
+                font-size: 1.5em;
+                font-weight: 700;
+                letter-spacing: 0.3em;
+                margin-bottom: 46px;
+
+                @include mq(md, max) {
+                    margin-bottom: 35px;
+                }
+
+                @include mq(sm, max) {
+                    margin-bottom: 20px;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+
+    &-02 {
+        .case-header {
+            &-profile {
+                padding-top: 72px;
+            }
+        }
+    }
+
+    &-03 {
+        .case-header-profile {
+            &-text {
+                &-en {
+                    margin-bottom: 19px;
+                }
+
+                &-jp {
+                    margin-bottom: 48px;
+                }
+            }
+        }
+    }
+
+}
+
+.p-corp {
+    padding-top: 22px;
+    margin-bottom: -24px;
+
+    &-consultation,
+    &-solution,
+    &-result {
+        padding-bottom: 75px;
+
+        @include mq(md, max) {
+            padding-bottom: 50px;
+        }
+
+        h5 {
+            font-size: 1.125em;
+            letter-spacing: 0.15em;
+            margin-left: -1px;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        &-subtitle {
+            text-transform: uppercase;
+            font-size: 0.75em;
+            font-family: $font-family-original01;
+            color: $primary-color;
+            letter-spacing: 0.16em;
+            padding-bottom: 27px;
+            margin-left: -1px;
+            font-weight: 500;
+        }
+
+        &-text {
+            font-size: 0.875em;
+            font-weight: 400;
+            letter-spacing: 0.19em;
+            line-height: 2.45;
+            text-align: justify;
+            padding-left: 2px;
+
+            @include mq (md, max) {
+                padding: 0;
+                line-height: 2.2;
+            }
+
+        }
+    }
+
+
+    &-solution {
+        padding-bottom: 69px;
+
+        @include mq(md, max) {
+            padding-bottom: 50px;
+        }
+
+    }
+
+    &-result {
+        padding-bottom: 88px;
+
+        @include mq(md, max) {
+            padding-bottom: 60px;
+        }
+    }
+
+    &-btn {
+        .btn {
+            display: block;
+            max-width: 100%;
+            padding-bottom: 18px;
+            padding-top: 18px;
+            padding-left: 45px;
+            letter-spacing: 0.15em;
+
+            @include mq(sm, max) {
+                padding: 10px;
+            }
+
+            span::after {
+                margin-left: 20px;
+            }
+        }
+
+    }
+
+    &-02 {
+        .p-corp {
+
+            &-solution {
+                padding-bottom: 77px;
+            }
+        }
+    }
+
+    &-03 {
+        padding-top: 20px;
+
+        .p-corp {
+
+            &-solution {
+                padding-bottom: 75px;
+            }
+
+            &-result {
+                padding-bottom: 138px;
+
+                @include mq(sm, max) {
+                    padding-bottom: 60px;
+                }
+
+            }
+        }
+    }
+}
+
+// ====================== end page case-corp ======================
